@@ -23,7 +23,8 @@ W_i - *weight* (as in Uniswap nomenclature), or *target reserve ratios*(as in Ba
 
 B_i - *balance* of token i in the system, i.e., amount of i in the traded reserves,
 
-V - value function, which system keeps constant during the trades (but it changes with market makers' deposits and withdrawals). The system uses weighted constant product function:
+V - value function, which system keeps constant during the trades (but it changes with market makers' deposits and withdrawals). The system uses weighted constant product function:  
+
 ![value](formulas/value_func.png)
 
 CMN_issued - amount of issued CMN tokens
@@ -36,13 +37,15 @@ T - set of supported tokens
 
 The Common DEX is operating under the following premises (the equations are based on generalized contant product model as derived and proven in [Balancer whitepaper](https://balancer.finance/whitepaper.html)):
 - Everyone can become a market maker by deposititing any or all of the supported tokens. In exchange, internal Common tokens (CMN) are minted in an amount proportional to the size of the deposit ([case of depositing one token](https://balancer.finance/whitepaper.html#single-asset-deposit), [case of depositing all supported tokens in proporions as currently in the deposit](https://balancer.finance/whitepaper.html#all-asset-depositwithdrawal)).
-- Every market maker (i.e., every holder of CMN tokens) has a right to vote for the *target reserve ratios* of the supported tokens. Market makers voting power equals the amount of CMN possesed, and votes can be arbitrarily distributed among supported tokens. We denote the voting power that market maker m decides to allocate on token i as A_{m,i}. The resulting *target reserve ratio* equals:
+- Every market maker (i.e., every holder of CMN tokens) has a right to vote for the *target reserve ratios* of the supported tokens. Market makers voting power equals the amount of CMN possesed, and votes can be arbitrarily distributed among supported tokens. We denote the voting power that market maker m decides to allocate on token i as A_{m,i}. The resulting *target reserve ratio* equals:  
+
 ![trr](formulas/target_reserve_ratios.png)
 
 
 
 - Any pair of supported tokens is tradable for anyone with [rate](https://balancer.finance/whitepaper.html#out-given-in) given by CPM
-- Each trade is subject to a fee proportional to the traded amount (say 0.3% of the trade, as in Uniswap). The fee f of a traded pair of tokens i,j is distributed among market makers proportionally to the votes given on i and j, so the fee awarded to the market maker m equals:
+- Each trade is subject to a fee proportional to the traded amount (say 0.3% of the trade, as in Uniswap). The fee f of a traded pair of tokens i,j is distributed among market makers proportionally to the votes given on i and j, so the fee awarded to the market maker m equals:  
+
 ![trr](formulas/fee.png)
 
 
@@ -69,16 +72,17 @@ Described mechanism converges to the situation in which the weight of each token
 
 
 
-Based on the *target reserve ratio* equation we have:
+Based on the *target reserve ratio* equation we have:  
+
 ![trr](formulas/eq1.png)
 ![trr](formulas/eq2.png)
 
-The total fee earned by market maker m in a unit of time equals:
+The total fee earned by market maker m in a unit of time equals:  
 
 ![trr](formulas/eq3.png)
 
 
-And using (1) we get:
+And using (1) we get:  
 
 ![trr](formulas/eq4.png)
 
