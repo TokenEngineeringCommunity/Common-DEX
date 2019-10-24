@@ -74,7 +74,8 @@ Described mechanism converges to the situation in which the weight of each token
 
 Based on the *target reserve ratio* equation we have:  
 
-![trr](formulas/eq1.png)
+![trr](formulas/eq1.png)  
+
 ![trr](formulas/eq2.png)
 
 The total fee earned by market maker m in a unit of time equals:  
